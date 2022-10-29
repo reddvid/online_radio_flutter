@@ -60,14 +60,22 @@ class _ListPageState extends State<ListPage> {
                     final stations = snapshot.data!;
                     return ContainerCard(
                       title: "All Stations",
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3),
-                        itemCount: stations.length,
-                        itemBuilder: (context, index) {
-                          return StationListItem(station: stations[index]);
-                        },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                          vertical: 12.0,
+                        ),
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  crossAxisSpacing: 8,
+                                  mainAxisSpacing: 4),
+                          itemCount: stations.length,
+                          itemBuilder: (context, index) {
+                            return StationListItem(station: stations[index]);
+                          },
+                        ),
                       ),
                     );
                   }

@@ -5,10 +5,12 @@ class ContainerCard extends StatelessWidget {
     Key? key,
     this.child,
     required this.title,
+    this.margin,
   }) : super(key: key);
 
   final Widget? child;
   final String title;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
